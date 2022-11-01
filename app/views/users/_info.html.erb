@@ -8,8 +8,18 @@
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
+  <tr>
+    <th>follows</th>
+    <th><%= user.followings.count %></th>
+    <!--.の後はモデルで決めたfollowingsでその人がフォローした人たちを取得-->
+  </tr>
+  <tr>
+    <th>followers</th>
+    <th><%= user.followers.count %></th>
+    <!--.の後はモデルで決めたfollowersでその人をフォローした人たちを取得-->
+  </tr>
 </table>
-　
+
 <div class='row'>
   <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
     <i class="fas fa-user-cog"></i>

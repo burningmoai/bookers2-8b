@@ -33,37 +33,10 @@
           <% end %>
         </tr>
 
-        <% @book.post_comments.each do |post_comment| %>
-        <tr>
-          <td>
-            <%= image_tag post_comment.user.get_profile_image, size:"50x50" %><br>
-            <%= post_comment.user.name %>
-          </td>
-          <td>
-            <%= post_comment.comment %>
-          </td>
+        <%= render "post_comments/index",book: @book %>
+        <%= render "post_comments/form",book: @book,post_comment: @post_comment %>
 
-          <td>
-            <% if post_comment.user == current_user %>
-              <%= link_to 'Destroy', book_post_comment_path(post_comment.book, post_comment), method: :delete, class: "btn btn-sm btn-danger"%></td>
-            <% end %>
-          </td>
 
-        <% end %>
-        </tr>
-
-        <tr>
-          <td>
-            <%= form_with model:[@book,@post_comment] do |f| %>
-              <%= f.text_area :comment,placeholder:"コメントをここに" %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-              <%= f.submit class: 'btn btn-success' %>
-            <% end %>
-          </td>
-        </tr>
 
       </table>
     </div>

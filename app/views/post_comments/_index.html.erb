@@ -1,16 +1,20 @@
-<% book.post_comments.each do |post_comment| %>
-  <tr>
-    <td>
-      <%= image_tag post_comment.user.get_profile_image, size:"50x50" %><br>
-      <%= post_comment.user.name %>
-    </td>
-    <td>
-      <%= post_comment.comment %>
-    </td>
-    <td>
-      <% if post_comment.user == current_user %>
-        <%= link_to 'Destroy', book_post_comment_path(post_comment.book, post_comment), method: :delete, class: "btn btn-sm btn-danger"%></td>
-      <% end %>
-    </td>
+<table>
+  <% book.post_comments.each do |post_comment| %>
+    <tr>
+      <td>
+        <%= image_tag post_comment.user.get_profile_image, size:"50x50" %><br>
+        <%= post_comment.user.name %>
+      </td>
+      <td>
+        <%= post_comment.comment %>
+      </td>
+
+      <td>
+        <% if post_comment.user == current_user %>
+          <%= link_to 'Destroy', book_post_comment_path(post_comment.book, post_comment), method: :delete,remote: true, class: "btn btn-sm btn-danger"%></td>
+        <% end %>
+      </td>
+
+    </tr>
   <% end %>
-  </tr>
+</table>

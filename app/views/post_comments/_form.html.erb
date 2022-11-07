@@ -1,11 +1,7 @@
 <tr>
   <td>
-    <%= form_with model:[book,post_comment] do |f| %>
+    <%= form_with model:[book,post_comment], local: false do |f| %>
       <%= f.text_area :comment,rows:5,placeholder:"コメントをここに♡",class: "w-100" %>
-  </td>
-</tr>
-<tr>
-  <td>
       <%= f.submit class: 'btn btn-success' %>
     <% end %>
   </td>

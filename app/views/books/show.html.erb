@@ -25,8 +25,8 @@
             <%= render "favorites/favorite_btn", book: @book %>
           </td>
 
-          <td>
-            <p>コメント数:<%= @book.post_comments.count %></p>
+          <td class="comment-counter">
+            <%= render "post_comments/counter", book: @book %>
           </td>
 
           <% if @book.user == current_user %>
@@ -42,7 +42,7 @@
       <!--コメントフォーム-->
         <%= render "post_comments/form",book: @book,post_comment: @post_comment %>
 
-      
+
     </div>
   </div>
 </div>

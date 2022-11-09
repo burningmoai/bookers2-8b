@@ -10,26 +10,6 @@
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
       <%= render 'index', books: @books%>
-      <h2>投稿数の前日比・前週比</h2>
-        <table>
-          <% @books.each do |day_count,week_count| %>
-          <tr>
-            <th>今日の投稿数</th>
-            <th>前日の投稿数</th>
-            <th>前日比</th>
-          </tr>
-          <tr>
-            <td><%= Date.current.post_count %></td>
-            <td><%= Date.yesterday.post_count %></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>今週の投稿数</th>
-            <th>前週の投稿数</th>
-            <th>前週比</th>
-          </tr>
-          <% end %>
-        </table>
     </div>
   </div>
 </div>

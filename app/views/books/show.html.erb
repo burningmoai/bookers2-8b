@@ -20,7 +20,10 @@
             <% end %>
           </td>
           <td><%= link_to @book.title, @book %></td>
-          <td><%= @book.body %></td>
+          <td>
+            <%= @book.body %>
+            <%= @book.created_at.strftime('%Y/%m/%d') %>
+          </td>
           <td id="favorite_btn_<%= @book.id %>">
             <%= render "favorites/favorite_btn", book: @book %>
           </td>

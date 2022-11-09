@@ -22,4 +22,12 @@ class Book < ApplicationRecord
     end
   end
 
+def day_count
+  @post_count = Book.group('DAY(created_at)').count
+end
+
+def week_count
+  @post_count = Book.group('WEEK(created_at)').count
+end
+
 end

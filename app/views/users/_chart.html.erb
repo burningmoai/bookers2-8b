@@ -1,0 +1,43 @@
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+$(document).ready(function() {
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+      labels: ["6日前","5日前","4日前","3日前","一昨日","前日","今日"],
+      datasets: [
+        {
+          label: '７日間の投稿数の比較',
+          data: [<%= @six_day_ago_book.count %>,<%= @five_day_ago_book.count %>,<%= @four_day_ago_book.count %>,<%= @three_day_ago_book.count %>,<%= @two_day_ago_book.count %>,<%= @yesterday_book.count %>,<%= @today_book.count %>],
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.2)'
+          ],
+          borderColor: [
+              'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }
+      ],
+    },
+    options: {
+      title: {
+        display:true,
+        text:'７日間の投稿数の比較'
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            suggestedMax: 100,
+            suggestedMin: 0,
+            stepSize: 10,
+            callback: function(value, index, values){
+              return value
+            }
+          }
+        }]
+      },
+    }
+});
+});
+</script>

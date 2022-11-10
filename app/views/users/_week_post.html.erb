@@ -1,0 +1,27 @@
+<h2>７日間分の投稿数</h2>
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th>6日前</th>
+      <th>5日前</th>
+      <th>4日前</th>
+      <th>3日前</th>
+      <th>一昨日</th>
+      <th>前日</th>
+      <th>今日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @six_day_ago_book.count %></td>
+      <td><%= @five_day_ago_book.count %></td>
+      <td><%= @four_day_ago_book.count %></td>
+      <td><%= @three_day_ago_book.count %></td>
+      <td><%= @two_day_ago_book.count %></td>
+      <td><%= @yesterday_book.count %></td>
+      <td><%= @today_book.count %></td>
+    </tr>
+  </tbody>
+</table>
+<table class='table table-hover table-inverse'>
+</table>

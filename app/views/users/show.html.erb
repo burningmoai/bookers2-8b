@@ -8,8 +8,16 @@
     </div>
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
+      <!--book一覧-->
       <%= render 'books/index',books: @books %>
+      <br>
+      <!--前日、今日、前日比、前週比-->
       <%= render 'book_index',books: @books %>
+      <br>
+      <!--１週間の投稿数-->
+      <%= render 'week_post',books: @books %>
+      <!--グラフ-->
+      <%= render 'chart',books: @books %>
     </div>
   </div>
 </div>

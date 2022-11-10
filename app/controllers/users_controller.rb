@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     @books = @user.books
     @book = Book.new
     # user.followings/followersで取得可
+    @today_book = @books.created_today
+    @yesterday_book = @books.created_yesterday
+    @this_week_book = @books.created_this_week
+    @last_week_book = @books.created_last_week
 
   end
 
@@ -13,11 +17,7 @@ class UsersController < ApplicationController
     @users = User.all
     @book = Book.new
     @user = current_user
-    @books = @user.books
-    @today_book = @books.created_today
-    @yesterday_book = @books.created_yesterday
-    @this_week_book = @books.created_this_week
-    @last_week_book = @books.created_last_week
+
   end
 
   def edit

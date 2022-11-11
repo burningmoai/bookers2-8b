@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     # user.followings/followersで取得可
     @today_book = @books.created_today
     @yesterday_book = @books.created_yesterday
-
     @this_week_book = @books.created_this_week
     @last_week_book = @books.created_last_week
   end
@@ -30,6 +29,12 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def search_date
+    @user = User.find(params[:user_id])
+    @books = @user.books.where(created_at: params[:created_at].to_date.all_day)
+    # render :search_date
   end
 
   # def followings

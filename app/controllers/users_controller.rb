@@ -8,11 +8,7 @@ class UsersController < ApplicationController
     # user.followings/followersで取得可
     @today_book = @books.created_today
     @yesterday_book = @books.created_yesterday
-    @two_day_ago_book =@books.created_two_day_ago
-    @three_day_ago_book =@books.created_three_day_ago
-    @four_day_ago_book =@books.created_four_day_ago
-    @five_day_ago_book =@books.created_five_day_ago
-    @six_day_ago_book =@books.created_six_day_ago
+
     @this_week_book = @books.created_this_week
     @last_week_book = @books.created_last_week
   end

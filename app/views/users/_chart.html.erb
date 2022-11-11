@@ -9,7 +9,15 @@ const myChart = new Chart(ctx, {
       datasets: [
         {
           label: '７日間の投稿数の比較',
-          data: [<%= @six_day_ago_book.count %>,<%= @five_day_ago_book.count %>,<%= @four_day_ago_book.count %>,<%= @three_day_ago_book.count %>,<%= @two_day_ago_book.count %>,<%= @yesterday_book.count %>,<%= @today_book.count %>],
+          data: [
+            <%= @books.created_6day_ago.count %>,
+            <%= @books.created_5day_ago.count %>,
+            <%= @books.created_4day_ago.count %>,
+            <%= @books.created_3day_ago.count %>,
+            <%= @books.created_2day_ago.count %>,
+            <%= @books.created_yesterday.count %>,
+            <%= @books.created_today.count %>
+          ],
           backgroundColor: [
               'rgba(255, 99, 132, 0.2)'
           ],

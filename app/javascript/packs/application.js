@@ -12,7 +12,7 @@ import "channels";
 import "popper.js";
 import "bootstrap";
 import Chart from 'chart.js/auto';
-// 
+//
 import '@fortawesome/fontawesome-free/js/all';
 import "../stylesheets/application";
 

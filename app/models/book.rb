@@ -1,6 +1,9 @@
 class Book < ApplicationRecord
   belongs_to :user
   has_many :favorites, dependent: :destroy
+  has_many :favorited_users, through: :favorites, source: :user
+  # throughは経由するjoinモデルの指定、sourceで関連づけ元のモデル名を指定
+  # favoriteモデルを介してuserモデルのデータを持ってくる
   has_many :post_comments, dependent: :destroy
 
   validates :title,presence:true

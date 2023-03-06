@@ -6,10 +6,12 @@ class UsersController < ApplicationController
     @books = @user.books
     @book = Book.new
     # user.followings/followersで取得可
+    # 前日比・前週比
     @today_book = @books.created_today
     @yesterday_book = @books.created_yesterday
     @this_week_book = @books.created_this_week
     @last_week_book = @books.created_last_week
+    # DM機能
     @current_entry = Entry.where(user_id: current_user.id)
     @another_entry = Entry.where(user_id: @user.id)
     unless @user.id == current_user.id
